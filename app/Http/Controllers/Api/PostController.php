@@ -37,6 +37,7 @@ class PostController extends Controller
         
           [
             'result' => $post,
+            'success' => true,
           ]
         
         );
@@ -47,6 +48,7 @@ class PostController extends Controller
         
           [
             'result' => 'Post non trovato',
+            'success' => false,
           ]
 
         );

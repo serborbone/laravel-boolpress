@@ -10,17 +10,12 @@
             <div class="col-4" v-for="post in postList" :key="post.id">
 
               <!-- CARD POST -->
-              <div class="card mb-3" style="width: 18rem;">
-
-                <div class="card-body">
-
-                  <h5 class="card-title">{{post.title}}</h5>
-                  <p class="card-text">{{post.content}}</p>
-                  <a href="#" class="btn btn-primary">Leggi il post</a>
-
-                </div>
-
-              </div>
+              <Post
+                :title='post.title'
+                :content='post.content'
+                :slug='post.slug'
+              >
+              </Post>
 
 
             </div>
@@ -47,9 +42,14 @@
 
 <script>
 
+import Post from '../components/Post.vue';
+
 export default {
 
   name: 'Main',
+  components: {
+    Post,
+  }, 
 
   data() {
 
