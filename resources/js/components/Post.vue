@@ -4,6 +4,8 @@
 
       <div class="card-body">
 
+        <img class="img-fluid" :src="img">
+
         <h5 class="card-title">{{ title}}</h5>
         <p class="card-text">{{ truncateText(content) }}</p>
 
@@ -20,7 +22,7 @@
 export default {
 
   name: 'Post',
-  props: ['title', 'content', 'slug'],
+  props: ['img', 'title', 'content', 'slug'],
 
   methods: {
 

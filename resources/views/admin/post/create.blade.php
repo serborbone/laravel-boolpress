@@ -4,9 +4,14 @@
 
   <div class="container">
 
-    <form method="POST" action="{{route('admin.posts.store')}}">
+    <form method="POST" action="{{route('admin.posts.store')}}" enctype="multipart/form-data">
 
         @csrf
+
+        <div class="form-group">
+            <label for="image">Immagine di copertina</label>
+            <input class="form-control w-25" type="file" name="image" id="image">
+        </div>
 
         <div class="form-group">
 

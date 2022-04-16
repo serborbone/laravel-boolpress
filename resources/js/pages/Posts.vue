@@ -14,6 +14,7 @@
                 :title='post.title'
                 :content='post.content'
                 :slug='post.slug'
+                :img='post.cover'
               >
               </Post>
 
@@ -46,7 +47,7 @@ import Post from '../components/Post.vue';
 
 export default {
 
-  name: 'Main',
+  name: 'Posts',
   components: {
     Post,
   }, 

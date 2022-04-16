@@ -2021,9 +2021,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Post',
-  props: ['title', 'content', 'slug'],
+  props: ['img', 'title', 'content', 'slug'],
   methods: {
     truncateText: function truncateText(text) {
       if (text.length > 50) {
@@ -2193,9 +2195,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Main',
+  name: 'Posts',
   components: {
     Post: _components_Post_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2237,6 +2240,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2949,6 +2954,8 @@ var render = function () {
         "div",
         { staticClass: "card-body" },
         [
+          _c("img", { staticClass: "img-fluid", attrs: { src: _vm.img } }),
+          _vm._v(" "),
           _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.title))]),
           _vm._v(" "),
           _c("p", { staticClass: "card-text" }, [
@@ -3149,6 +3156,7 @@ var render = function () {
                   title: post.title,
                   content: post.content,
                   slug: post.slug,
+                  img: post.cover,
                 },
               }),
             ],
@@ -3237,6 +3245,11 @@ var render = function () {
           ? _c(
               "div",
               [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: _vm.post.cover },
+                }),
+                _vm._v(" "),
                 _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
                 _vm._v(" "),
                 _vm.post.category

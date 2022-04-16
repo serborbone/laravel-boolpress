@@ -6,6 +6,8 @@
 
             <div v-if="post">
 
+              <img class="img-fluid" :src="post.cover">
+
               <h1>{{post.title}}</h1>
 
               <h5 v-if="post.category">Categoria: {{post.category.name}}</h5>

@@ -18,6 +18,20 @@ class PostController extends Controller
         //ottengo i post con i dati relativi alle categorie e mostro solo due elementi per pagina
         $posts = Post::with(['category', 'tags'])->paginate(2);
 
+        $posts->each(function($post) {
+        
+          if ($post->cover) {
+
+            $post->cover = url('storage/'.$post->cover);
+
+          } else {
+          
+            $post->cover = url('img/fallback_img.jpg');
+
+          }
+        
+        });
+
         return response()->json(
         
           [
@@ -30,6 +44,19 @@ class PostController extends Controller
     public function show($slug) {
     
       $post = Post::where('slug', '=', $slug)->with(['category', 'tags'])->first();
+
+      //mostro immagine nel singlepost
+      if ($post->cover) {
+
+            $post->cover = url('storage/'.$post->cover);
+
+      } else {
+          
+            $post->cover = url('img/fallback_img.jpg');
+
+      }
+
+
 
       if ($post) {
       

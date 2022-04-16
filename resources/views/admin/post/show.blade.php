@@ -3,6 +3,12 @@
 @section('content')
 
   <div class="container">
+    
+    @if ($post->cover)
+      <img class="img-fluid" src="{{asset('storage/'. $post->cover)}}">
+    @else 
+      <img class="img-fluid" src="{{asset('img/fallback_img.jpg'. $post->cover)}}">
+    @endif
 
     <h1>{{$post->title}}</h1>
     <div>Testo: {{$post->content}}</div>
